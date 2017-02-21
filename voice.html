@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>音乐导航</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/html5shiv.min.js" type="text/javascript"></script>
+        <style>
+            *{margin: 0px;padding: 0px;}
+            li{list-style: none;}
+            #ul{
+                width:700px;
+                height:70px;
+                background-color:skyblue;
+                margin: 0px auto;
+            } 
+            #ul li{
+                width:100px;
+                color:#fff;
+                float:left;
+                text-align: center;
+                line-height: 70px;
+            }
+            #ul li:hover{
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="ul">
+            <li au="a">1</li>
+            <li au="b">2</li>
+            <li au="c">3</li>
+            <li au="d">4</li>
+            <li au="e">5</li>
+            <li au="f">6</li>
+            <li au="g">7</li>
+        </ul> 
+        <audio id="au"></audio>
+        <script>
+            var oLi = document.getElementsByTagName("li");
+            var oAu = document.getElementById("au");
+            for (var i = 0; i <= oLi.length; i++) {
+                oLi[i].onmouseover = function () {
+                    var one = this.getAttribute("au");
+                    oAu.src = "http://s8.qhimg.com/share/audio/piano1/" + one + "4.mp3";
+                    oAu.play();
+                };
+            };
+        </script>
+    </body>
+</html>
